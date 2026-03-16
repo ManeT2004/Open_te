@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ate Shai</title>
+
+<style>
+
+body{
+margin:0;
+font-family:sans-serif;
+overflow:hidden;
+text-align:center;
+background-image:url("cover.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+height:100vh;
+}
+
+/* TITLE */
+
+#title{
+margin-top:20vh;
+font-size:8vw;
+color:white;
+text-shadow:0 6px 25px rgba(0,0,0,.5);
+}
+
+/* BUTTONS */
+
+button{
+padding:12px 28px;
+font-size:18px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin:10px;
+}
+
+#proceed{background:#ff4d6d;color:white}
+#no{background:white;color:#ff4d6d}
+
+/* SAD CARD */
+
+#card{
+display:none;
+margin-top:30px;
+}
+
+#card img{
+width:180px;
+}
+
+/* STEP 2 CENTERED */
+
+#step2{
+display:none;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+gap:20px;
+}
+
+/* BLOW TEXT */
+
+#step2 h2{
+color:white;
+font-size:30px;
+text-shadow:0 4px 12px rgba(0,0,0,.6);
+}
+
+/* CAKE */
+
+#cake{
+width:260px;
+opacity:0;
+transform:scale(.7);
+transition:1.5s;
+}
+
+#cake.show{
+opacity:1;
+transform:scale(1);
+}
+
+/* YEY */
+
+#yey{
+display:none;
+font-size:90px;
+color:white;
+text-shadow:0 0 25px gold;
+}
+
+/* FLOWERS */
+
+.flower{
+position:absolute;
+bottom:0;
+width:6px;
+height:0;
+background:green;
+animation:grow 2s forwards;
+}
+
+.petals{
+position:absolute;
+top:-20px;
+left:-10px;
+width:26px;
+height:26px;
+}
+
+.petal{
+position:absolute;
+width:10px;
+height:16px;
+background:pink;
+border-radius:50%;
+}
+
+.petal:nth-child(1){top:0;left:8px;}
+.petal:nth-child(2){top:6px;left:16px;}
+.petal:nth-child(3){top:14px;left:8px;}
+.petal:nth-child(4){top:6px;left:0;}
+
+.center{
+position:absolute;
+top:8px;
+left:8px;
+width:8px;
+height:8px;
+background:yellow;
+border-radius:50%;
+}
+
+@keyframes grow{
+to{height:90px}
+}
+
+/* HEART FIREWORK */
+
+.firework{
+position:absolute;
+width:10px;
+height:10px;
+background:red;
+clip-path:polygon(
+50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%
+);
+animation:explode 1.6s forwards;
+}
+
+@keyframes explode{
+100%{
+transform:translate(var(--x),var(--y));
+opacity:0;
+}
+}
+
+/* CONFETTI */
+
+.confetti{
+position:absolute;
+width:8px;
+height:14px;
+top:-20px;
+animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(720deg);
+}
+}
+
+/* MESSAGE BOX */
+
+#messageBox{
+display:none;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:30px;
+width:500px;
+height: 550px;
+overflow: scroll;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+animation:pop 1s forwards;
+}
+
+#messageBox p{
+    text-align: left;
+}
+
+/* Mobile adjustments */
+@media (max-width:600px){
+#messageBox{
+width:75%;
+height:60vh;
+padding:20px;
+border-radius:10px;
+}
+#yey{
+    font-size: 76px;
+}
+}
+
+@keyframes pop{
+from{transform:translate(-50%,-60%) scale(.7)}
+to{transform:translate(-50%,-50%) scale(1)}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 id="title">HAPPY BIRTHDAY ATE SHAI!</h1>
+
+<div id="buttons">
+<button id="proceed">Proceed</button>
+<button id="no">NO I WON'T</button>
+</div>
+
+<div id="card">
+<img src="sad.gif">
+<br>
+<button id="fine">Okay fine</button>
+<button id="stillno">I won't</button>
+</div>
+
+<div id="step2">
+
+<h2>Blow It First 🎂</h2>
+
+<img src="cake.png" id="cake">
+
+<h1 id="yey">YEYYYY!!!</h1>
+
+</div>
+
+<div id="messageBox">
+
+<h2>Hi Ate 🎉</h2>
+
+<p>
+‎HAHAHA bahala ka mag ate ko, para kwets 😝 
+‎
+‎Anyway, HAPPY BIRTHDAY!  Luh effort yarn? efforts!? HAHA awa natakdan naku. <br>
+‎
+‎<br> I know life can be hard sometimes, but I can see that you’re handling it well. Don’t stop chasing your goals, because I know someday you will definitely reach them. Maybe there are difficult moments right now, but everything happens for a reason. All things have a purpose.
+‎<br>
+‎<br>  Keep nurturing the talents and skills that you have. Always stay grateful. And honestly, I’m also thankful that you guys joined the org—especially you. Basin maka quit naku? HAHAHA. Maybe there’s a reason why things happened the way they did; it wasn’t just an accident that you joined. 
+‎<br>
+‎<br><br>Let me leave some of my favorite verses nalang
+‎<br>
+‎<br>Numbers 6:24–26 <br>
+‎"The Lord bless you and keep you; the Lord makes his face shine on you and be gracious to you; the Lord turns his face toward you and gives you peace."
+‎<br><br>
+‎Psalm 20:4 <br>
+‎"May he give you(Shyle) the desire of your heart and make all your plans succeed."
+‎<br><br>
+‎Proverbs 9:11 <br>
+‎"For through wisdom your days will be many, and years will be added to your life."
+‎<br><br>
+‎And I want to add this verse too, especially for the times when you might doubt yourself or lose confidence:
+‎<br><br>
+‎Psalm 139:14 <br>
+‎"You (Shyle) are fearfully and wonderfully made."
+‎<br><br>
+‎Stay who you are. You’re already perfect so stop doubting yourself.
+‎<br><br>
+‎Wish lang nku is kuan God continues to guide you in every step you take, give you strength in hard times, and fill your life with peace, happiness, and the success you truly deserve. more birthday to come pa.
+‎<br><br>
+‎Diri ra taman HAHAHA.
+‎Happy Birthday again!
+</p>
+
+</div>
+
+<audio id="music" loop>
+<source src="music.mp3">
+</audio>
+
+<script>
+
+const proceed=document.getElementById("proceed")
+const no=document.getElementById("no")
+const card=document.getElementById("card")
+const fine=document.getElementById("fine")
+const stillno=document.getElementById("stillno")
+
+const step2=document.getElementById("step2")
+const cake=document.getElementById("cake")
+const yey=document.getElementById("yey")
+const music=document.getElementById("music")
+
+/* NO BUTTON */
+
+no.onclick=()=>{
+card.style.display="block"
+document.getElementById("buttons").style.display="none"
+}
+
+/* RUN BUTTON */
+
+stillno.onmouseover=()=>{
+stillno.style.position="absolute"
+stillno.style.left=Math.random()*80+"%"
+stillno.style.top=Math.random()*80+"%"
+}
+
+/* START */
+
+function startStep(){
+
+document.getElementById("title").style.display="none"
+card.style.display="none"
+document.getElementById("buttons").style.display="none"
+
+step2.style.display="flex"   // show step 2 only now
+
+music.play()
+
+setTimeout(()=>cake.classList.add("show"),300)
+
+startMic()
+
+}
+
+proceed.onclick=startStep
+fine.onclick=startStep
+
+/* MIC BLOW */
+
+function startMic(){
+
+navigator.mediaDevices.getUserMedia({audio:true})
+.then(stream=>{
+
+const ctx=new AudioContext()
+const mic=ctx.createMediaStreamSource(stream)
+const analyser=ctx.createAnalyser()
+
+mic.connect(analyser)
+
+const data=new Uint8Array(analyser.frequencyBinCount)
+
+function detect(){
+
+analyser.getByteTimeDomainData(data)
+
+let peak=0
+
+for(let i=0;i<data.length;i++){
+peak=Math.max(peak,Math.abs(data[i]-128))
+}
+
+if(peak>15){
+
+stream.getTracks().forEach(t=>t.stop())
+
+cake.style.display="none"
+document.querySelector("#step2 h2").style.display="none"
+
+showYey()
+
+}else{
+requestAnimationFrame(detect)
+}
+
+}
+
+detect()
+
+})
+
+}
+
+/* YEY */
+
+function showYey(){
+
+yey.style.display="block"
+
+setTimeout(()=>{
+yey.style.display="none"
+startCelebration()
+},2000)
+
+}
+
+/* CELEBRATION */
+
+function startCelebration(){
+
+document.body.style.backgroundImage="url('sky.jpg')"
+
+createFlowers()
+startFireworks()
+startConfetti()
+
+setTimeout(()=>{
+document.getElementById("messageBox").style.display="block"
+},3500)
+
+}
+
+/* FLOWERS */
+
+function createFlowers(){
+
+for(let i=0;i<16;i++){
+
+const flower=document.createElement("div")
+flower.className="flower"
+flower.style.left=(i*6)+"vw"
+
+const petals=document.createElement("div")
+petals.className="petals"
+
+for(let p=0;p<4;p++){
+const petal=document.createElement("div")
+petal.className="petal"
+petals.appendChild(petal)
+}
+
+const center=document.createElement("div")
+center.className="center"
+
+petals.appendChild(center)
+
+flower.appendChild(petals)
+
+document.body.appendChild(flower)
+
+}
+
+}
+
+/* FIREWORKS */
+
+function startFireworks(){
+
+setInterval(()=>{
+
+const cx=Math.random()*window.innerWidth
+const cy=Math.random()*200
+
+for(let i=0;i<60;i++){
+
+const f=document.createElement("div")
+f.className="firework"
+
+f.style.left=cx+"px"
+f.style.top=cy+"px"
+
+f.style.background=`hsl(${Math.random()*360},100%,60%)`
+
+f.style.setProperty("--x",(Math.random()*300-150)+"px")
+f.style.setProperty("--y",(Math.random()*300-150)+"px")
+
+document.body.appendChild(f)
+
+setTimeout(()=>f.remove(),1600)
+
+}
+
+},1200)
+
+}
+
+/* CONFETTI */
+
+function startConfetti(){
+
+for(let i=0;i<140;i++){
+
+const c=document.createElement("div")
+c.className="confetti"
+
+c.style.left=Math.random()*100+"vw"
+c.style.background=`hsl(${Math.random()*360},100%,60%)`
+c.style.animationDelay=Math.random()*2+"s"
+
+document.body.appendChild(c)
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
